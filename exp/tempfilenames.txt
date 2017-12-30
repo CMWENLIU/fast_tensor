@@ -1,0 +1,10 @@
+mv test_0 set_0
+mv test_1 set_1
+mv test_2 set_2
+mv test_3 set_3
+mv test_4 set_4
+mv test_5 set_5
+mv test_6 set_6
+mv test_7 set_7
+mv test_8 set_8
+mv test_9 set_9
