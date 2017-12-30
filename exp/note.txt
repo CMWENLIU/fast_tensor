@@ -1,3 +1,9 @@
+How to list all my system space left and usage:
+df -h
+how to list all subfolders of a directory
+du -h -d 1
+d means depth of recursive 
+---------------------------------------------------
 How to rename all subfolders in a folder via shell script:
 for x in *new*; do mv "$x" "${x//new/hpc}"; done
 above command select all subfolders contain 'new' 
