@@ -1,3 +1,8 @@
+How to rename all subfolders in a folder via shell script:
+for x in *new*; do mv "$x" "${x//new/hpc}"; done
+above command select all subfolders contain 'new' 
+and replace 'new' with hpc for all folder names
+--------------------------------------------------
 How to connect hpc server and view files from linux file system:
 click connect to server then input the following:
 ssh://username@servername.example.com/
