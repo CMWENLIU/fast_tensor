@@ -1,3 +1,8 @@
+running records on KATE:
+python train.py -i outdir/train.corpus  -nv 500  -ctype kcomp
+python pred.py -i outdir/test.corpus -lm model  -o output/a.txt
+python run_classifier.py output/tr.txt outdir/train.labels output/te.txt outdir/test.labels -nv 300 -cv 10
+------------------------------------------------
 How to list all my system space left and usage:
 df -h
 how to list all subfolders of a directory
@@ -33,6 +38,7 @@ This is the page for refer: https://coderwall.com/p/ohk6cg/remote-access-to-ipyt
 4 jupyter notebook list command on server will list all running notebooks
 --------------------------------------------
 This works for me to install tensorflow on hpc 
+
 through anaconda:
 conda install -c anaconda tensorflow 
 --------------------------------------------
