@@ -1,4 +1,9 @@
 running records on KATE:
+python train.py -i outdir/train.corpus  -nv 5000 --noise gs  -ctype kcomp -nd 300
+python pred.py -i bbcdata_prepare/train.corpus  -lm model  -o output/training.txt 
+python pred.py -i bbcdata_prepare/test.corpus  -lm model  -o output/test.txt 
+python run_classifier.py output/training.txt bbcdata_prepare/train.labels output/test.txt bbcdata_prepare/test.labels -nv 200 -cv 5
+----------
 python train.py -i outdir/train.corpus  -nv 500  -ctype kcomp
 python pred.py -i outdir/test.corpus -lm model  -o output/a.txt
 python run_classifier.py output/tr.txt outdir/train.labels output/te.txt outdir/test.labels -nv 300 -cv 10
@@ -32,7 +37,7 @@ wordnew = stemmer.stem(word)
 How to launch jupyter notebook on server side and
 view in brower of loal machine?
 This is the page for refer: https://coderwall.com/p/ohk6cg/remote-access-to-ipython-notebooks-via-ssh
-1 on remote server: remote_user@remote_host$ ipython notebook --no-browser --port=8889
+q1 on remote server: remote_user@remote_host$ ipython notebook --no-browser --port=8889
 2 on local machine: local_user@local_host$ ssh -N -f -L localhost:8888:localhost:8889 remote_user@remote_host
 3 view in local machine browser: localhost:8888
 4 jupyter notebook list command on server will list all running notebooks
