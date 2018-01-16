@@ -1,3 +1,11 @@
+How to add prefix for all fils in a folder in linux:
+for f in * ; do mv "$f" "PRE_$f" ; done
+
+How to set Ununtu system to input chinese:
+1 system settings from right up corner, lunguage support -> install remove lunguage and make chinese checked.
+2 system settings text entry -> unchek show corrent input source in the menu bar 
+3 hit '+' and choose pinyin (chinese) or wubi(chinese)  -> Done
+------------------------------------------------- 
 running records on KATE:
 python train.py -i outdir/train.corpus  -nv 9000 --noise gs  -ctype kcomp -nd 2000
 python pred.py -i bbcdata_prepare/train.corpus  -lm model  -o output/training.txt -e tr_embedding.txt
