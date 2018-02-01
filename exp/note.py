@@ -9,6 +9,7 @@ How to add prefix for all fils in a folder in linux:
 for f in * ; do mv "$f" "PRE_$f" ; done
 ------------------------------------------------
 How to set Ununtu system to input chinese:
+Look at this page:http://blog.csdn.net/iamplane/article/details/70447517
 1 system settings from right up corner, lunguage support -> install remove lunguage and make chinese checked.
 2 system settings text entry -> unchek show corrent input source in the menu bar 
 3 hit '+' and choose pinyin (chinese) or wubi(chinese)  -> Done
