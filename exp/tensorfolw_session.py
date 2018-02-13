@@ -2,6 +2,16 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
 
+
+
+x = 2
+y = 3
+op1 = tf.add(x, y)
+op2 = tf.multiply(x, y)
+op3 = tf.pow(op2, op3)
+with tf.Session as sess:
+	op3 = sess.run(op3)
+print (op3)
 '''
 state = tf.Variable(0, name = "counter")
 one = tf.constant(1)
@@ -28,7 +38,7 @@ with tf.Session() as sess:
 	result = sess.run(mul)
 	print (result)
 #----------------------------------
-'''
+
 
 input1 = tf.placeholder(tf.float32)
 input2 = tf.placeholder(tf.float32)
@@ -37,3 +47,4 @@ output = tf.multiply(input1, input2)
 with tf.Session() as sess:
 	result = sess.run([output], feed_dict = {input1: [7.], input2: [2.]})
 	print (result)
+'''
