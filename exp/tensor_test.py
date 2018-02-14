@@ -1,6 +1,24 @@
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
+
+#-------------------Constants, Sequences, Variables, Ops
+a = tf.constant([2, 8], name = 'a')
+b = tf.constant([[0, 1], [2, 3]], name = 'b')
+print (a)
+print (b)
+x = tf.multiply(a, b, name = 'mul')
+with tf.Session() as sess:
+	print(sess.run(x))
+
+c = (tf.zeros([3, 5], tf.float64))
+with tf.Session() as sess:
+	print(sess.run(c))
+
+d = tf.zeros_like(b)
+with tf.Session() as sess:
+	print (sess.run(d))
+'''
 #Visualize it with TensorBoard
 a = tf.constant(2)
 b = tf.constant(3)
@@ -11,8 +29,7 @@ with tf.Session() as sess:
   # writer = tf.summary.FileWriter('./graphs', sess.graph)
   print(sess.run(x))
 writer.close()
-'''
-#First tensorflow program
+#---------------------First tensorflow program
 a = tf.constant(2)
 b = tf.constant(3)
 x = tf.add(a, b)
