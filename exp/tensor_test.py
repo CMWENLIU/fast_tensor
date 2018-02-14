@@ -5,15 +5,17 @@ import tensorflow as tf
 #-------------------Constants, Sequences, Variables, Ops
 a = tf.constant([2, 8], name = 'a')
 b = tf.constant([[0, 1], [2, 3]], name = 'b')
-print (a)
-print (b)
 x = tf.multiply(a, b, name = 'mul')
-with tf.Session() as sess:
-	print(sess.run(x))
-
 c = tf.zeros([3, 5], tf.float64)
+d = tf.zeros_like(b, tf.float32)
+e = tf.ones_like(a,)
+f = tf.fill([4, 6], 8, name = 'numbers_8')
 with tf.Session() as sess:
-	print(sess.run(c))
+	print('\nThis is tensor x:\n', sess.run(x))
+	print('\nThis is tensor c:\n', sess.run(c))
+	print('\nThis is tensor d:\n', sess.run(d))
+	print('\nThis is tensor e:\n', sess.run(e))
+	print('\nThis is tensor f:\n', sess.run(f))
 '''
 #Visualize it with TensorBoard
 a = tf.constant(2)
