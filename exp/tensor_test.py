@@ -11,13 +11,9 @@ x = tf.multiply(a, b, name = 'mul')
 with tf.Session() as sess:
 	print(sess.run(x))
 
-c = (tf.zeros([3, 5], tf.float64))
+c = tf.zeros([3, 5], tf.float64)
 with tf.Session() as sess:
 	print(sess.run(c))
-
-d = tf.zeros_like(b)
-with tf.Session() as sess:
-	print (sess.run(d))
 '''
 #Visualize it with TensorBoard
 a = tf.constant(2)
