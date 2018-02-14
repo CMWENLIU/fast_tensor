@@ -10,12 +10,14 @@ c = tf.zeros([3, 5], tf.float64)
 d = tf.zeros_like(b, tf.float32)
 e = tf.ones_like(a,)
 f = tf.fill([4, 6], 8, name = 'numbers_8')
+lin_space = tf.lin_space(10, 13, 4)
 with tf.Session() as sess:
 	print('\nThis is tensor x:\n', sess.run(x))
 	print('\nThis is tensor c:\n', sess.run(c))
 	print('\nThis is tensor d:\n', sess.run(d))
 	print('\nThis is tensor e:\n', sess.run(e))
 	print('\nThis is tensor f:\n', sess.run(f))
+	print('\nThis is tensor lin_space:\n', sess.run(lin_space))
 '''
 #Visualize it with TensorBoard
 a = tf.constant(2)
