@@ -1,7 +1,24 @@
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
+import numpy as np
 
+
+print('\nTensorflow integrate seamless with Numpy:\n',tf.int32 == np.int32)
+tensor_numpy = tf.ones([2, 2], np.float32)
+with tf.Session() as sess:
+	a = sess.run(tensor_numpy)
+	print (type(a), a)
+W = tf.Variable(tf.zeros([7,10]))
+e = tf.zeros([3, 5], tf.float32)
+
+with tf.Session() as sess:
+	sess.run(W.initializer)
+	print (W.eval())
+	print (sess.run(e))
+print(W)
+print(e)
+'''
 #-------------------Constants, Sequences, Variables, Ops
 a = tf.constant([2, 8], name = 'a')
 b = tf.constant([[0, 1], [2, 3]], name = 'b')
@@ -20,8 +37,8 @@ with tf.Session() as sess:
 	print('\nThis is tensor f:\n', sess.run(f))
 	print('\nThis is tensor lin_space:\n', sess.run(lin_space))
 	print('\nThis is tensor range_number:\n', sess.run(range_num))
-'''
-#Visualize it with TensorBoard
+
+#----------------------Visualize it with TensorBoard
 a = tf.constant(2)
 b = tf.constant(3)
 x = tf.add(a, b)
