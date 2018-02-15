@@ -11,9 +11,14 @@ with tf.Session() as sess:
 	print (type(a), a)
 W = tf.Variable(tf.zeros([7,10]))
 e = tf.zeros([3, 5], tf.float32)
+W1 = tf.Variable(10)
+W1.assign(100)
 
 with tf.Session() as sess:
 	sess.run(W.initializer)
+	sess.run(W1.initializer)
+	print (W1)
+	print (W1.eval())
 	print (W.eval())
 	print (sess.run(e))
 print(W)
