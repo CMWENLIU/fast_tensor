@@ -13,7 +13,7 @@ for data in data_sets:
 	filename += '.vec200.txt'
 	filepath = '/home/xxliu10/bigdata/'	+ filename
 	sentences = LineSentence(data)
-	model = Word2Vec(sentences, size=200, window=5, min_count=1, workers=4)
+	model = Word2Vec(sentences, size=200, window=5, min_count=5, workers=4)
 	model.wv.save_word2vec_format(filepath, binary=False)
 	print(filename + ' has been finished!')
 #sentences = [["cat", "say", "meow"], ["dog", "say", "woof"]]

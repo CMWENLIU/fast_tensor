@@ -3,7 +3,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import tensorflow as tf
 import numpy as np
 
-
+#------------------TF Variables
 print('\nTensorflow integrate seamless with Numpy:\n',tf.int32 == np.int32)
 tensor_numpy = tf.ones([2, 2], np.float32)
 with tf.Session() as sess:
@@ -12,11 +12,18 @@ with tf.Session() as sess:
 W = tf.Variable(tf.zeros([7,10]))
 e = tf.zeros([3, 5], tf.float32)
 W1 = tf.Variable(10)
-W1.assign(100)
-
+assign_op = W1.assign(100)
+my_var = tf.Variable(2, name = 'my_var')
+my_var_times_two = my_var.assign(2 * my_var)
+print (my_var)
 with tf.Session() as sess:
 	sess.run(W.initializer)
 	sess.run(W1.initializer)
+	sess.run(assign_op)
+	sess.run(my_var.initializer)
+	sess.run(my_var_times_two)
+	print(my_var.eval())
+	print(my_var_times_two.eval())
 	print (W1)
 	print (W1.eval())
 	print (W.eval())

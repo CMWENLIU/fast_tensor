@@ -1,3 +1,6 @@
+How to add user with password in linux root user on line:
+useradd linuxuser echo "linuxpassword" | passwd --stdin linuxuser
+---------------------------------------------
 How to fix ubuntu: stuck in login loop and warn:
 system program problem detected:
 solution is here:https://www.linuxslaves.com/2016/05/3-ways-fix-ubuntu-gets-stuck-login-loop.html
