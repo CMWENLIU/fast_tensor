@@ -3,10 +3,10 @@ from gensim.models.word2vec import LineSentence
 import os
 
 data_sets = ['/home/xxliu10/bigdata/bbcready/allbbc.news',
-             '/home/xxliu10/bigdata/collectready/allmk.news',
-             '/home/xxliu10/bigdata/bbc_mk.news',
-             '/home/xxliu10/bigdata/tweets/weets1.txt.new',
-             '/home/xxliu10/bigdata/bbc_tweets.news']
+             #'/home/xxliu10/bigdata/collectready/allmk.news',
+             #'/home/xxliu10/bigdata/bbc_mk.news',
+             #'/home/xxliu10/bigdata/tweets/weets1.txt.new',
+             #'/home/xxliu10/bigdata/bbc_tweets.news']
 
 for data in data_sets:
 	head, filename = os.path.split(data)
