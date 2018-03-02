@@ -1,3 +1,7 @@
+Download and install anaconda in line:
+wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+bash Anaconda3-5.1.0-Linux-x86_64.sh
+--------------------------------------------
 How to add user with password in linux root user on line:
 useradd linuxuser echo "linuxpassword" | passwd --stdin linuxuser
 ---------------------------------------------
