@@ -12,3 +12,5 @@ source ~/.bashrc
 
 conda update conda
 source ~/.bashrc
+ 
+#update finish
