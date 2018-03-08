@@ -16,5 +16,9 @@ source ~/.bashrc
 # Install tf-gpu v1.3
 conda install -c jjhelmus tensorflow-gpu-base 
 # Refresh for tensorflow
+
+#install gensim
+conda install gensim
+
 source ~/.bashrc
 done
