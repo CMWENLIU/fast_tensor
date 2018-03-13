@@ -21,4 +21,5 @@ conda install -c jjhelmus tensorflow-gpu-base
 conda install gensim
 
 source ~/.bashrc
-done
+cd
+
