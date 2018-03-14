@@ -8,18 +8,21 @@ echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc
 
 # Refresh basically
 source ~/.bashrc
+source ~/.bashrc
+source ~/.bashrc
 
 conda update conda
 # Refresh for updating
 source ~/.bashrc
-
+source ~/.bashrc
+source ~/.bashrc
 # Install tf-gpu v1.3
 conda install -c jjhelmus tensorflow-gpu-base 
-# Refresh for tensorflow
 
 #install gensim
 conda install gensim
-
+source ~/.bashrc
+source ~/.bashrc
 source ~/.bashrc
 cd
 
