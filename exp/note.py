@@ -1,3 +1,7 @@
+how to install a package from pip into conda environment:
+pip install --install-option="--prefix=$PREFIX_PATH" package_name
+https://stackoverflow.com/questions/2915471/install-a-python-package-into-a-different-directory-using-pip
+--------------------------------------------------------------------
 Download and install anaconda in line:
 wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
 bash Anaconda3-5.1.0-Linux-x86_64.sh
