@@ -1,5 +1,6 @@
 #import Image
 #except ImportError:
+import data_helpers
 import PIL
 from PIL import Image
 import pillowfight
@@ -19,12 +20,12 @@ print("Will use tool '%s'" % (tool.get_name()))
 # Ex: Will use tool 'libtesseract'
 
 langs = tool.get_available_languages()
-print("Available languages: %s" % ", ".join(langs))
+#print("Available languages: %s" % ", ".join(langs))
 lang = langs[17]
 print("Will use lang '%s'" % (lang))
 
 #------------------
-input_img = PIL.Image.open("test.JPG")
+input_img = PIL.Image.open('/home/xxliu10/Downloads/DG.jpg')
 output_img = pillowfight.ace(input_img)
 
 
@@ -36,6 +37,12 @@ txt = tool.image_to_string(
 )
 # txt is a Python string
 print(txt)
+print(len(txt))
+newtxt = data_helpers.clean_str(txt)
+print('Following is the new txt')
+print(newtxt)
+print(len(newtxt))
+'''
 word_boxes = tool.image_to_string(
     Image.open('test2.png'),
     lang="eng",
@@ -97,3 +104,4 @@ digits = tool.image_to_string(
 
 # Get information about orientation and script detection
 #print(pytesseract.image_to_osd(Image.open('test.JPG'))
+'''
