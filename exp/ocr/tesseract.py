@@ -33,7 +33,7 @@ print("Will use lang '%s'" % (lang))
 #output_img = pillowfight.ace(input_img)
 # construct the argument parse and parse the arguments
 #----------------------
-'''
+
 files = glob.glob('testimg/*')
 for f in files:
     head, tail = os.path.split(f)
@@ -44,8 +44,8 @@ for f in files:
     print(f)
     print ('-----' + data_helpers.process_raw(txt))
     print ('----------------' + data_helpers.process_raw(txt1))
-'''
 
+'''
 #-----------------------------------------------------
 ftypes = ('images/*.jpg', 'images/*.png','images/*.bmp', 'images/*.jpeg',
           'images/*.JPG', 'images/*.PNG', 'images/*.BMP', 'images/*.JPEG') # the tuple of file types
@@ -71,7 +71,7 @@ with open ('result.txt', 'w', encoding = 'utf-8') as output:
 
 print('Successful ratio is: ' + str(count/len(files_grabbed)))
 #------------------------------------------------
-
+'''
 
 '''
 txt = tool.image_to_string(

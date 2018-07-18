@@ -22,5 +22,5 @@ def improve(input_file):
     orig_img = cv2.imread(input_file)
     output_file = binarize(orig_img)
     #output_file = remove_noise(output_file)
-    output_file = rescale(output_file)
+    #output_file = rescale(output_file)
     return output_file
