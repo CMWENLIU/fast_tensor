@@ -1,6 +1,10 @@
 #import Image
 #except ImportError:
+import os
+import cv2
+import glob
 import data_helpers
+import process_image
 import PIL
 from PIL import Image
 import pillowfight
@@ -25,23 +29,70 @@ lang = langs[17]
 print("Will use lang '%s'" % (lang))
 
 #------------------
-input_img = PIL.Image.open('/home/xxliu10/Downloads/DG.jpg')
-output_img = pillowfight.ace(input_img)
+#input_img = PIL.Image.open('/home/xxliu10/Downloads/DG.jpg')
+#output_img = pillowfight.ace(input_img)
+# construct the argument parse and parse the arguments
+#----------------------
+'''
+files = glob.glob('testimg/*')
+for f in files:
+    head, tail = os.path.split(f)
+    newimg = process_image.improve(f)
+    cv2.imwrite( tail + "new.png", newimg)
+    txt = tool.image_to_string(Image.open(f), lang=lang, builder=pyocr.builders.TextBuilder())
+    txt1 = tool.image_to_string(Image.fromarray(newimg), lang=lang, builder=pyocr.builders.TextBuilder())
+    print(f)
+    print ('-----' + data_helpers.process_raw(txt))
+    print ('----------------' + data_helpers.process_raw(txt1))
+'''
+
+#-----------------------------------------------------
+ftypes = ('images/*.jpg', 'images/*.png','images/*.bmp', 'images/*.jpeg',
+          'images/*.JPG', 'images/*.PNG', 'images/*.BMP', 'images/*.JPEG') # the tuple of file types
+files_grabbed = []
+for files in ftypes:
+    files_grabbed.extend(glob.glob(files))
+
+print ('There are ' + str(len(files_grabbed)) + ' images loaded')
+#print (files_grabbed)
+count = 1
+with open ('result.txt', 'w', encoding = 'utf-8') as output:
+    for f in files_grabbed:
+        newimg = process_image.improve(f)
+        txt = tool.image_to_string(Image.fromarray(newimg), lang=lang, builder=pyocr.builders.TextBuilder())
+        #txt = pyocr.libtesseract.image_to_string(Image.open(f), lang=lang, builder=pyocr.builders.TextBuilder())
+        cleantxt = data_helpers.process_raw(txt)
+        head, tail = os.path.split(f)
+        output.write(tail + '\n')
+        output.write(cleantxt + '\n')
+        if len(cleantxt) > 7:
+            print('Image ' + str(count) + ' is processed:  ' + cleantxt)
+            count += 1
+
+print('Successful ratio is: ' + str(count/len(files_grabbed)))
+#------------------------------------------------
 
 
+'''
 txt = tool.image_to_string(
-    #Image.open(output_img),
-    output_img,
+    Image.open('/home/xxliu10/Downloads/DG.jpg'),
+    #output_img,
     lang=lang,
     builder=pyocr.builders.TextBuilder()
-)
+)'''
+'''
 # txt is a Python string
+print('Following is precessed with length-------------------'+ str(len(txt)))
 print(txt)
-print(len(txt))
+pro = data_helpers.process_raw(txt)
+print('Following is precessed with length-------------------'+ str(len(pro)))
+print(pro)
 newtxt = data_helpers.clean_str(txt)
-print('Following is the new txt')
+print('Following is precessed with length-------------------'+ str(len(newtxt)))
+
 print(newtxt)
 print(len(newtxt))
+'''
 '''
 word_boxes = tool.image_to_string(
     Image.open('test2.png'),
