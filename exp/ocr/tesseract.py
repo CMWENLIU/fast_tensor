@@ -1,7 +1,7 @@
 #import Image
 #except ImportError:
 import os
-import cv2
+import cv2, matplotlib
 import glob
 import data_helpers
 import process_image
