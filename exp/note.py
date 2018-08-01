@@ -1,3 +1,6 @@
+website to download all install files of Linux:
+ftp://ftp.mirrorservice.org/sites/
+---------------------------------------------------------------
 Test images on tesseract simplest way:
 tesseract ~/Downloads/neocr_dataset/Images/users/pixtract/dataset/img_11267413.jpg - -l eng
 Install language for tesseract:
