@@ -1,4 +1,5 @@
 import os
+import glob
 
 
 def renamef(folder):
@@ -10,33 +11,24 @@ def renamef(folder):
 		os.rename(filename, newname)			
 
 def sep_tr_te(tr, te):
-	directory_list = list()
-	for root, dirs, files in os.walk(tr):
-		for name in dirs:
-			directory_list.append(os.path.join(root, name))
-	print (str(len(directory_list)))
+	dirs_tr= os.listdir(tr) # get all files' and folders' names in the directory
+	dirs_te= os.listdir(te)
+	for di in dirs_tr: # loop through all the files and folders
+		current_path = os.path.join(tr, di)
+		files = glob.glob(current_path + '/*')
+		sep = len(files)//3
+		for f in sorted(files)[:sep]:
+			os.remove(f)
+
+	for di in dirs_te: # loop through all the files and folders
+		current_path = os.path.join(te, di)
+		files = glob.glob(current_path + '/*')
+		sep = len(files)//3
+		for f in sorted(files)[sep:]:
+			os.remove(f)
 
 if __name__ == "__main__":
-	sep_tr_te('~/running/KATE/', '_')
+	sep_tr_te('/home/xxliu10/running/KATE/20_newsgroups_training',
+	 '/home/xxliu10/running/KATE/20_newsgroups_test')
 
-
-'''to try
-import os
-
-filenames= os.listdir (".") # get all files' and folders' names in the current directory
-
-result = []
-for filename in filenames: # loop through all the files and folders
-    if os.path.isdir(os.path.join(os.path.abspath("."), filename)): # check whether the current object is a folder or not
-        result.append(filename)
-        
-result.sort()
-
-f= open('list.txt','w')
-for index,filename in enumerate(result):
-    f.write("%s. %s \n"%(index,filename))
-
-f.close()
-
-'''
 	
