@@ -1,3 +1,6 @@
+move all files from subfolders:
+find ~/Downloads/ -type f -print0 | xargs -0 mv -t ~/Videos
+--------------------------------------------------------------
 website to download all install files of Linux:
 ftp://ftp.mirrorservice.org/sites/
 ---------------------------------------------------------------

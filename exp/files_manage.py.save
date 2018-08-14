@@ -1,0 +1,13 @@
+import os
+		
+foldername = 'test/pred_business'
+def rename(foldername):
+	os.chdir(foldername)
+        for filename in os.listdir(os.getcwd()):
+                print (filename)
+                newname = filename.replace(').txt', '.txt')
+                newname = newname.replace('business(', 'business')
+                os.rename(filename, newname)
+
+
+if __name__ == "__main__"
