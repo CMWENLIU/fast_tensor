@@ -1,3 +1,11 @@
+How to install tesseract ocr for cent os?
+How to download the languages for tesseract
+https://groups.google.com/forum/#!topic/tesseract-ocr/u-PZaakaKs0
+# Download and install tesseract language files (Tesseract 4 traineddata files)
+wget https://github.com/tesseract-ocr/tessdata/raw/master/osd.traineddata
+wget https://github.com/tesseract-ocr/tessdata/raw/master/equ.traineddata
+wget https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata
+--------------------------------------------------------------
 move all files from subfolders:
 find ~/Downloads/ -type f -print0 | xargs -0 mv -t ~/Videos
 --------------------------------------------------------------
