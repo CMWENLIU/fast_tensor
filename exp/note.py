@@ -1,3 +1,7 @@
+Install python3 and python2 on centOS:
+https://tecadmin.net/install-python-2-7-on-centos-rhel/
+https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-centos-7
+--------------------------------------------------------------
 How to install tesseract ocr for cent os?
 How to download the languages for tesseract
 https://groups.google.com/forum/#!topic/tesseract-ocr/u-PZaakaKs0
